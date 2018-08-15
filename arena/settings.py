@@ -149,3 +149,7 @@ MEDIA_URL = '/media/'
 MEDIAFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+if not DEBUG:
+    import django_heroku
+    django_heroku()
