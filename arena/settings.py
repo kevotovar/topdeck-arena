@@ -149,6 +149,6 @@ MEDIAFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-if not DEBUG:
+if not DEBUG and not env('CI'):
     import django_heroku
     django_heroku.settings(locals())
