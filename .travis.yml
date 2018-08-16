@@ -1,0 +1,16 @@
+language: python
+
+python:
+  - "3.5"
+
+env:
+  - DATABASE_URL=psql://postgres:postgres@127.0.0.1:5432/default
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - python mananage.py test
+
+services:
+  - postgresql
