@@ -3,10 +3,6 @@ language: python
 python:
   - "3.5"
 
-env:
-  - DATABASE_URL=psql://postgres:postgres@127.0.0.1:5432/default
-  - SECRET_KEY=secret
-
 install:
   - pip install -r requirements.txt
 
