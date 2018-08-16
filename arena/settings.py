@@ -14,7 +14,8 @@ import os, environ
 
 env = environ.Env(
     DEBUG=(bool, False),
-    SECRET_KEY=str
+    SECRET_KEY=str,
+    CI=(bool, False)
 )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -149,6 +150,6 @@ MEDIAFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-if not DEBUG and not env('CI', False):
+if not DEBUG and not env('CI'):
     import django_heroku
     django_heroku.settings(locals())
