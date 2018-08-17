@@ -50,6 +50,7 @@ CORE_APPS = [
 
 THIRD_APPS = [
     'authtools',
+    'crispy_forms',
 ]
 
 MY_APPS = [
@@ -58,6 +59,8 @@ MY_APPS = [
 ]
 
 INSTALLED_APPS = CORE_APPS + THIRD_APPS + MY_APPS
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 AUTH_USER_MODEL = 'users.User'
 
