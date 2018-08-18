@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}Iniciar Sesión{% endblock %}
+{% block main %}
+<div class="container">
+  <h1>Iniciar Sesión</h1>
+  <a href="{% url "social:begin" "facebook" %}">Facebook</a>
+</div>
+{% endblock %}

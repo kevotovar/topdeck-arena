@@ -15,7 +15,9 @@ import os, environ
 env = environ.Env(
     DEBUG=(bool, False),
     SECRET_KEY=str,
-    CI=(bool, False)
+    CI=(bool, False),
+    FACEBOOK_APP_ID=(str, ''),
+    FACEBOOK_SECRET_KEY=(str, '')
 )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -51,6 +53,7 @@ CORE_APPS = [
 THIRD_APPS = [
     'authtools',
     'crispy_forms',
+    'social_django',
 ]
 
 MY_APPS = [
@@ -72,6 +75,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'arena.urls'
@@ -89,6 +93,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -152,6 +158,22 @@ MEDIA_URL = '/media/'
 MEDIAFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+# Soical auth config
+
+SOCIAL_AUTH_FACEBOOK_KEY = env('FACEBOOK_APP_ID')
+SOCIAL_AUTH_FACEBOOK_SECRET = env('FACEBOOK_SECRET_KEY')
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_POSTGRES_JSONFIELD = True
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+LOGIN_REDIRECT_URL="/"
+
+#Heorku config
 
 if not DEBUG and not env('CI'):
     import django_heroku
