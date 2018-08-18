@@ -13,3 +13,6 @@ script:
 
 services:
   - postgresql
+
+addons:
+  postgresql: "9.6"
