@@ -1,11 +1,14 @@
 language: python
 
-cache: pip
+cache:
+  pip: true
+  yarn: true
 
 python:
   - "3.5"
 
 install:
+  - yarn
   - pip install -r requirements.txt
 
 script:
