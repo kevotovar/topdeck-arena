@@ -51,6 +51,7 @@ CORE_APPS = [
 THIRD_APPS = [
     'authtools',
     'crispy_forms',
+    'webpack_loader',
 ]
 
 MY_APPS = [
@@ -152,6 +153,13 @@ MEDIA_URL = '/media/'
 MEDIAFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundle/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+    }
+}
 
 if not DEBUG and not env('CI'):
     import django_heroku
