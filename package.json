@@ -1,0 +1,36 @@
+{
+  "name": "esports-arena",
+  "version": "0.0.1",
+  "description": "The LATAM esports project",
+  "main": "index.js",
+  "repository": "git@github.com:kevotovar/topdeck-arena.git",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js --progress --colors",
+    "watch": "webpack --watch --config webpack.dev.js",
+    "postinstall": "webpack --config webpack.prod.js"
+  },
+  "author": "Kevin Tovar <kevintovar@esimez.mx>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "webpack": "^4.16.5",
+    "webpack-bundle-tracker": "^0.3.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "clean-webpack-plugin": "^0.1.19",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.4"
+  },
+  "engines": {
+    "node": ">8.0.0",
+    "npm": "6.2.0"
+  }
+}

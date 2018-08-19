@@ -53,6 +53,7 @@ CORE_APPS = [
 THIRD_APPS = [
     'authtools',
     'crispy_forms',
+    'webpack_loader',
     'social_django',
 ]
 
@@ -159,6 +160,13 @@ MEDIAFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundle/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+    }
+}
+
 # Soical auth config
 
 SOCIAL_AUTH_FACEBOOK_KEY = env('FACEBOOK_APP_ID')
@@ -174,7 +182,6 @@ AUTHENTICATION_BACKENDS = (
 LOGIN_REDIRECT_URL="/"
 
 #Heorku config
-
 if not DEBUG and not env('CI'):
     import django_heroku
     django_heroku.settings(locals())
