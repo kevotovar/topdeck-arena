@@ -3,14 +3,12 @@ const webpack = require('webpack');
 const BundleTracker = require('webpack-bundle-tracker');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-console.log(process.env.ENV)
-
 module.exports = {
   context: __dirname,
   entry: './static/js/argon.js',
   output: {
     path: path.resolve('./static/bundle/'),
-    filename: '[name]-[hash].js'
+    filename: '[name].js'
   },
   plugins: [
     new BundleTracker({filename: './webpack-stats.json'}),
