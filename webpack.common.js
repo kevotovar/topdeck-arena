@@ -5,12 +5,16 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   context: __dirname,
-  entry: './static/js/argon.js',
+  entry: './static/js/main.js',
   output: {
     path: path.resolve('./static/bundle/'),
     filename: '[name].js'
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
     new BundleTracker({filename: './webpack-stats.json'}),
     new CleanWebpackPlugin(['static/bundle/'])
   ],
