@@ -17,7 +17,8 @@ env = environ.Env(
     SECRET_KEY=str,
     CI=(bool, False),
     FACEBOOK_APP_ID=(str, ''),
-    FACEBOOK_SECRET_KEY=(str, '')
+    FACEBOOK_SECRET_KEY=(str, ''),
+    CHALLONGE_API_KEY=(str, ''),
 )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -180,6 +181,8 @@ AUTHENTICATION_BACKENDS = (
 )
 
 LOGIN_REDIRECT_URL="/"
+
+CHALLONGE_API_KEY=env('CHALLONGE_API_KEY')
 
 #Heorku config
 if not DEBUG and not env('CI'):
