@@ -22,6 +22,15 @@
           <span class="nav-link-inner--text">Nosotros</span>
         </a>
       </li>
+      {% if request.user.is_authenticated %}
+
+      {% else %}
+        <li class="nav-item">
+          <a class="nav-link nav-link-icon btn btn-success" href="{% url 'login' %}">
+              Iniciar sesión
+          </a>
+        </li>
+      {% endif %}
     </ul>
 
     </div>
