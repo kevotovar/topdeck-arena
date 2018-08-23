@@ -7,9 +7,6 @@ cache:
 python:
   - "3.5"
 
-node_js:
-  - "10.7"
-
 install:
   - yarn
   - yarn build
