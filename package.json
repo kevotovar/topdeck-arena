@@ -52,6 +52,10 @@
     "*.{js,css,md}": [
       "prettier --write",
       "git add"
+    ],
+    "*.{py}": [
+      "autopep8 *.py",
+      "git add"
     ]
   }
 }
