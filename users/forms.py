@@ -7,6 +7,7 @@ from crispy_forms.layout import Submit
 
 from core.forms import BaseForm
 
+
 class SignUpForm(UserCreationForm, BaseForm):
     name = forms.CharField(max_length=30, required=False, label=_('name'))
 
@@ -18,6 +19,7 @@ class SignUpForm(UserCreationForm, BaseForm):
         super().__init__(*args, **kwargs)
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Registrarse'))
+
 
 class LoginForm(BaseForm):
     country_code = forms.CharField(max_length=4, initial='+52')

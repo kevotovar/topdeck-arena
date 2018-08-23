@@ -10,7 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os, environ
+import os
+import environ
 
 env = environ.Env(
     DEBUG=(bool, False),
@@ -183,9 +184,9 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-LOGIN_REDIRECT_URL="/"
+LOGIN_REDIRECT_URL = "/"
 
-#Heorku config
+# Heorku config
 if not DEBUG and not env('CI'):
     import django_heroku
     django_heroku.settings(locals())
