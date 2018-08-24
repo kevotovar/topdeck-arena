@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from crispy_forms.layout import Submit
 
-from core.forms import BaseForm
+from app.core.forms import BaseForm
 
 
 class SignUpForm(UserCreationForm, BaseForm):
