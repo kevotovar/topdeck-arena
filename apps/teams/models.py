@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from core.models import TimeStampedModel
-from users.models import User
+from apps.core.models import TimeStampedModel
+from apps.users.models import User
 
 
 class Team(TimeStampedModel):

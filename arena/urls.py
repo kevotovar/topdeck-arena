@@ -21,8 +21,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),
-    path('', include('users.urls')),
+    path('', include('apps.core.urls')),
+    path('', include('apps.users.urls')),
     path('', include('social_django.urls', namespace='social')),
 ] + static(
     settings.STATIC_URL,
