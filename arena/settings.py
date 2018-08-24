@@ -62,6 +62,7 @@ MY_APPS = [
     'core',
     'users',
     'teams',
+    'tournaments',
 ]
 
 INSTALLED_APPS = CORE_APPS + THIRD_APPS + MY_APPS
