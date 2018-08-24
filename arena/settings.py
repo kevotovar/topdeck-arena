@@ -59,10 +59,10 @@ THIRD_APPS = [
 ]
 
 MY_APPS = [
-    'core',
-    'users',
-    'teams',
-    'tournaments',
+    'apps.core',
+    'apps.users',
+    'apps.teams',
+    'apps.tournaments',
 ]
 
 INSTALLED_APPS = CORE_APPS + THIRD_APPS + MY_APPS

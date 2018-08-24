@@ -1,7 +1,7 @@
 from django.db import models
 
-from core.models import TimeStampedModel
-from teams.models import Team
+from apps.core.models import TimeStampedModel
+from apps.teams.models import Team
 
 
 class Tournament(TimeStampedModel):
