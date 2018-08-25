@@ -27,6 +27,22 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.(scss)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function() {
+                return [require('precss'), require('autoprefixer')];
+              },
+            },
+          },
+          'sass-loader',
+        ],
+      },
     ],
   },
   resolve: {
