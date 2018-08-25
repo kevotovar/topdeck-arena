@@ -7,6 +7,7 @@ module.exports = {
   context: __dirname,
   entry: {
     main: path.resolve('./static/js/main.js'),
+    styles: path.resolve('./static/js/styles.js'),
   },
   output: {
     path: path.resolve('./static/bundle/'),

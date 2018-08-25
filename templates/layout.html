@@ -13,6 +13,7 @@
 <body>
   {% include 'partials/navbar.html' %}
   {% block main %}{% endblock %}
+  {% render_bundle 'styles' %}
   {% render_bundle 'main' %}
   {% block extra_js %}{% endblock %}
 </body>
