@@ -1,4 +1,4 @@
-import 'bootstrap/dist/js/bootstrap';
-import 'popper.js/dist/popper';
-import './argon';
-import './global';
+require('bootstrap/dist/js/bootstrap');
+require('popper.js/dist/popper');
+require('./argon');
+require('./global');

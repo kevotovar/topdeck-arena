@@ -5,9 +5,9 @@
   "main": "index.js",
   "repository": "git@github.com:kevotovar/topdeck-arena.git",
   "scripts": {
-    "build": "webpack --config webpack.prod.js --progress --colors",
-    "watch": "webpack --watch --config webpack.dev.js",
-    "postinstall": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack/webpack.prod.js --progress --colors",
+    "watch": "webpack --watch --config webpack/webpack.dev.js",
+    "postinstall": "yarn build"
   },
   "author": "Kevin Tovar <kevintovar@esimez.mx>",
   "license": "MIT",
