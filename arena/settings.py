@@ -193,7 +193,7 @@ if not DEBUG and not env('CI'):
     import django_heroku
     import raven
     django_heroku.settings(locals())
-    MIDDLEWARE.append('raven.contrib.django.raven_compat')
+    MIDDLEWARE = (*MIDDLEWARE, 'raven.contrib.django.raven_compat')
     RAVEN_CONFIG = {
         'dsn': env('RAVEN_DSN'),
         'release': raven.fetch_git_sha(os.path.abspath(os.pardir))
