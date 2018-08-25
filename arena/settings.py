@@ -57,6 +57,7 @@ THIRD_APPS = [
     'crispy_forms',
     'webpack_loader',
     'social_django',
+    'raven.contrib.django.raven_compat',
 ]
 
 MY_APPS = [
@@ -193,7 +194,6 @@ if not DEBUG and not env('CI'):
     import django_heroku
     import raven
     django_heroku.settings(locals())
-    MIDDLEWARE = (*MIDDLEWARE, 'raven.contrib.django.raven_compat')
     RAVEN_CONFIG = {
         'dsn': env('RAVEN_DSN')
     }
