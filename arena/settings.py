@@ -15,11 +15,12 @@ import environ
 
 env = environ.Env(
     DEBUG=(bool, os.environ.get('DEBUG', False)),
-    SECRET_KEY=str,
+    SECRET_KEY=(str, os.environ.get('SECRET_KEY', '')),
     CI=(bool, False),
     FACEBOOK_APP_ID=(str, os.environ.get('FACEBOOK_APP_ID', '')),
     FACEBOOK_SECRET_KEY=(str, os.environ.get('FACEBOOK_SECRET_KEY', '')),
-    RAVEN_DSN=(str, os.environ.get('RAVEN_DSN', ''))
+    RAVEN_DSN=(str, os.environ.get('RAVEN_DSN', '')),
+    DATABASE_URL=(str, os.environ.get('DATABASE_URL', ''))
 )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
