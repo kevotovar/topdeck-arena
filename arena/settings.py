@@ -18,7 +18,8 @@ env = environ.Env(
     SECRET_KEY=str,
     CI=(bool, False),
     FACEBOOK_APP_ID=(str, ''),
-    FACEBOOK_SECRET_KEY=(str, '')
+    FACEBOOK_SECRET_KEY=(str, ''),
+    RAVEN_DSN=(str, '')
 )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -190,4 +191,10 @@ LOGIN_REDIRECT_URL = "/"
 # Heorku config
 if not DEBUG and not env('CI'):
     import django_heroku
+    import raven
     django_heroku.settings(locals())
+    MIDDLEWARE.append('raven.contrib.django.raven_compat')
+    RAVEN_CONFIG = {
+        'dsn': env('RAVEN_DSN'),
+        'release': raven.fetch_git_sha(os.path.abspath(os.pardir))
+    }
