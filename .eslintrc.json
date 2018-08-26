@@ -1,7 +1,8 @@
 {
   "extends": ["airbnb", "plugin:prettier/recommended"],
   "env": {
-    "browser": true
+    "browser": true,
+    "jquery": true
   },
   "rules": {
     "func-names": "off",

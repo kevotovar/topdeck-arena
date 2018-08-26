@@ -1,2 +1,5 @@
-require('bootstrap');
-require('popper.js/dist/popper');
+require('materialize-css');
+
+$(() => {
+  $('.dropdown-trigger').dropdown({ hover: false });
+}); // end of document ready

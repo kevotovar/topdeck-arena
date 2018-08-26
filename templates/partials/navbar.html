@@ -1,47 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
-    <a class="navbar-brand" href="{% url 'home' %}">Esports Arena</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbar-default">
-      <div class="navbar-collapse-header">
-        <div class="row">
-          <div class="col-6 offset-6 collapse-close">
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
-              <span></span>
-              <span></span>
-            </button>
-        </div>
-      </div>
-    </div>
-
-    <ul class="navbar-nav ml-lg-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'about' %}">
-          <span class="nav-link-inner--text">Nosotros</span>
-        </a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="{% url 'tournaments' %}">
-            <span class="nav-link-inner--text">Torneos</span>
-          </a>
-        </li>
-      {% if request.user.is_authenticated %}
-        <div class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}">
-            Cerrar Sesión
-          </a>
-        </div>
-      {% else %}
-        <li class="nav-item">
-          <a class="nav-link btn btn-success" href="{% url 'login' %}">
-              Iniciar sesión
-          </a>
-        </li>
-      {% endif %}
-    </ul>
-
+<nav>
+  <div class="nav-wrapper">
+    <div class="container">
+      <a class="brand-logo" href="{% url 'home' %}">Esports Arena</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{% url 'about' %}">Nosotros</a></li>
+        <li><a href="{% url 'tournaments' %}">Torneos</a></li>
+        {% if request.user.is_authenticated %}
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="user-dropdown">
+              {{request.user.username}} <i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+          <ul id="user-dropdown" class="dropdown-content">
+            <li class="divider"></li>
+            <li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>
+          </ul>
+        {% else %}
+          <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+        {% endif %}
+      </ul>
     </div>
   </div>
 </nav>
