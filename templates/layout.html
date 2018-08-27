@@ -7,13 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{% block title %}{% endblock %} | Top Deck Arena</title>
+  {% render_bundle 'styles' %}
   {% block extra_css %}{% endblock %}
+  {% if not debug %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124637952-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-124637952-1');
+  </script>
+  {% endif %}
 </head>
 <body>
   {% include 'partials/navbar.html' %}
   {% block main %}{% endblock %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  {% render_bundle 'styles' %}
   {% render_bundle 'main' %}
   {% block extra_js %}{% endblock %}
 </body>

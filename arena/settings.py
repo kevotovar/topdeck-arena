@@ -190,6 +190,11 @@ AUTHENTICATION_BACKENDS = (
 
 LOGIN_REDIRECT_URL = "/"
 
+INTERNAL_IPS = (
+    '127.0.0.1',
+    'localhost',
+)
+
 # Heorku config
 if not DEBUG and not env('CI'):
     import django_heroku
