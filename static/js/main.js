@@ -1,13 +1,9 @@
 import WebFont from 'webfontloader';
 
-require('materialize-css');
+require('bootstrap');
 
 WebFont.load({
   google: {
-    families: ['Material Icons'],
+    families: ['Lato:400,700,400italic'],
   },
 });
-
-$(() => {
-  $('.dropdown-trigger').dropdown({ hover: false });
-}); // end of document ready

@@ -70,7 +70,7 @@ MY_APPS = [
 
 INSTALLED_APPS = CORE_APPS + THIRD_APPS + MY_APPS
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'materialize_css_forms'
 
 AUTH_USER_MODEL = 'users.User'
 
