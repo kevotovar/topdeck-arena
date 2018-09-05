@@ -1,0 +1,13 @@
+#hero-image {
+  background-image: url('../images/league-of-legends-home.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+#hero-image h1 {
+  color: white;
+}

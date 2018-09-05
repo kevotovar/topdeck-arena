@@ -4,6 +4,6 @@ require('bootstrap');
 
 WebFont.load({
   google: {
-    families: ['Lato:400,700,400italic'],
+    families: ['Lato:400,700,400,italic'],
   },
 });

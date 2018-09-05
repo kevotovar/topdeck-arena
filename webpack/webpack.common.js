@@ -12,10 +12,11 @@ module.exports = {
   output: {
     path: path.resolve('./static/bundle/'),
     filename: '[name].js',
+    publicPath: 'static/bundle/',
   },
   plugins: [
     new BundleTracker({ filename: './webpack-stats.json' }),
-    new CleanWebpackPlugin(['static/bundle/']),
+    new CleanWebpackPlugin(['./static/bundle/']),
   ],
   module: {
     rules: [
@@ -38,6 +39,17 @@ module.exports = {
             },
           },
           'sass-loader',
+        ],
+      },
+      {
+        test: /\.(png|jpg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+          {
+            loader: 'image-webpack-loader',
+          },
         ],
       },
     ],
